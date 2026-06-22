@@ -15,7 +15,7 @@ function pairSumSortedBruteForce(nums, target) {
 console.log(pairSumSortedBruteForce([1,1,1],2));
 
 
-function isMatch(s, p) {
+/* function isMatch(s, p) {
     if (p.length === 0) {
         return s.length === 0;
     }
@@ -30,4 +30,26 @@ function isMatch(s, p) {
     } else {
         return firstMatch && isMatch(s.slice(1), p.slice(1));
     }
+} */
+
+function func(nums, target) {
+  let l = 0;
+  let r = nums.length - 1;
+
+  while (l < r) {
+    const sum = nums[l] + nums[r];
+
+    if (sum === target) {
+      return [l, r];
+    } else if (sum < target) {
+      l++;
+    } else {
+      r--;
+    }
+  }
+
+return [];
 }
+
+console.log(func([0,0,0,0], 7));
+
