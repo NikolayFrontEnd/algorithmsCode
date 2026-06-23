@@ -53,3 +53,26 @@ return [];
 
 console.log(func([0,0,0,0], 7));
 
+function tripletSumBruteForce(nums) {
+  const n = nums.length;
+  // Use a Set to ensure we don't add duplicate triplets.
+  const triplets = new Set();
+
+  // Iterate through the indexes of all triplets.
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      for (let k = j + 1; k < n; k++) {
+        if (nums[i] + nums[j] + nums[k] === 0) {
+          // Sort the triplet before turning it into a key.
+          const triplet = [nums[i], nums[j], nums[k]].sort((a, b) => a - b);
+          // Sets can't dedupe arrays by value (objects compare by reference),
+          // so we join the sorted triplet into a string key instead.
+          triplets.add(triplet.join(','));
+        }
+      }
+    }
+  }
+
+  // Convert each string key back into an array of numbers.
+  return [...triplets].map(t => t.split(',').map(Number));
+}
