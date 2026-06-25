@@ -146,3 +146,29 @@ if(t[l] !== t[r]){
 }return true;}
 
 console.log(func('all'))
+
+
+// Largest Container
+
+const h = [2, 7, 8, 3, 7, 6];
+
+let l = 0;
+let r = h.length-1;
+let max = 0;
+
+while (l < r){
+    
+let tempMax = (r - l) * Math.min(h[l], h[r]);
+   
+   if(max<tempMax){
+       max = tempMax;
+   }
+   
+   if(l<r){
+       l++;
+   }
+   
+   if(l>r){
+       r--;
+   }
+}
