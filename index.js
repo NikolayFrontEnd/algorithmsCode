@@ -118,3 +118,31 @@ function pair_sum_sorted_all_pairs(nums, start, target) {
   }
   return pairs
 }
+
+
+// Is Palindrome Valid
+
+const isLetter = (char)=>{
+    return /[a-z,A-Z]/.test(char)
+}
+const func = (s) =>{
+const t = s.split("");
+l = 0;
+r = t.length-1;
+
+    while(l<r){
+        
+while(l<r && isLetter(t[l]) === false){
+    l++;
+}
+while(l<r && isLetter(t[r]) === false){
+    r--;
+}
+if(t[l] !== t[r]){ 
+    return false  
+}
+ l++;
+ r--;
+}return true;}
+
+console.log(func('all'))
