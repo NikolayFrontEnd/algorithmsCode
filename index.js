@@ -172,3 +172,23 @@ let tempMax = (r - l) * Math.min(h[l], h[r]);
        r--;
    }
 }
+
+//Shift Zeros to the End
+
+const n = [0, 1, 0, 3, 2];
+const t = [];
+
+
+for(let i = 0; i<n.length;i++){
+  if(n[i] !== 0){
+      t.push(n[i])
+  }
+}
+
+for(let i = 0; i<n.length;i++){
+  if(n[i] === 0){
+      t.push(n[i])
+  }
+}
+
+console.log(t)
