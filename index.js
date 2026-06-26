@@ -192,3 +192,24 @@ for(let i = 0; i<n.length;i++){
 }
 
 console.log(t)
+
+
+//improved method:
+
+const n =  [1, 0, 2];
+let l = 0;
+
+
+for(let r = 0; r<n.length;r++){
+
+
+
+if(n[l] === 0 && n[r] !== 0){
+    [n[l], n[r]] = [n[r], n[l]];
+}
+
+if(n[l] !== 0){
+    l++;
+}
+}
+console.log(n)
